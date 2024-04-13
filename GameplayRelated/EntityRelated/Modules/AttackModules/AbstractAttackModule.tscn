@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cnkq4ffh3aawr"]
+
+[node name="AbstractAttackModule" type="Node2D"]

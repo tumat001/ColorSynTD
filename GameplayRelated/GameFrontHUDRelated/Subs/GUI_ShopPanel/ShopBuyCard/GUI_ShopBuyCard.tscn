@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbbwomcepqub2"]
+
+[ext_resource type="Script" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/ShopBuyCard/GUI_ShopBuyCard.gd" id="1_rwmgq"]
+[ext_resource type="Texture2D" uid="uid://bwa6l166jar7g" path="res://GameplayRelated/GameFrontHUDRelated/Subs/_commons/GUI_TierIcon/GUI_TierIcon_LongLarge_Tier03.png" id="2_84mqv"]
+[ext_resource type="Texture2D" uid="uid://bijq78tv6ogsj" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/ShopBuyCard/Assets/GUI_ShopBuyCard_Stem01.png" id="3_ww7te"]
+[ext_resource type="Texture2D" uid="uid://tbj23biougsr" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/ShopBuyCard/Assets/GUI_ShopBuyCard_Blue_PaintTower.png" id="4_mxifg"]
+[ext_resource type="Shader" path="res://MiscRelated/Shaders/Shader_HalfDiagonalMask.gdshader" id="5_4i4et"]
+[ext_resource type="Texture2D" uid="uid://di3jsawecrv47" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/ShopBuyCard/Assets/GUI_ShopBuyCard_Red_PaintTower.png" id="6_r6wsv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nr7vj"]
+shader = ExtResource("5_4i4et")
+shader_parameter/upper_is_filled_instead = false
+
+[node name="GUI_ShopBuyCard" type="MarginContainer"]
+offset_right = 70.0
+offset_bottom = 21.0
+script = ExtResource("1_rwmgq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TierContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TierContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
+
+[node name="TierBanner" type="TextureRect" parent="VBoxContainer/TierContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_84mqv")
+
+[node name="TierStem" type="TextureRect" parent="VBoxContainer/TierContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_ww7te")
+stretch_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Color01Background" type="TextureRect" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("4_mxifg")
+
+[node name="Color02Background" type="TextureRect" parent="VBoxContainer/MarginContainer2"]
+material = SubResource("ShaderMaterial_nr7vj")
+layout_mode = 2
+texture = ExtResource("6_r6wsv")

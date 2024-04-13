@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwuftlosgdwbo"]
+
+[ext_resource type="Script" path="res://GameplayRelated/Managers/GameElements.gd" id="1_8l3ld"]
+[ext_resource type="Script" path="res://GameplayRelated/Managers/TowerManager.gd" id="2_n62gc"]
+
+[node name="GameElements" type="Node"]
+script = ExtResource("1_8l3ld")
+
+[node name="TowerManager" type="Node2D" parent="."]
+script = ExtResource("2_n62gc")
