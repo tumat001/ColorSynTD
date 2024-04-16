@@ -1,3 +1,4 @@
+class_name ConditionalClauses
 extends RefCounted
 
 signal clause_inserted(clause)

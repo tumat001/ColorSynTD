@@ -1,4 +1,4 @@
-extends Node
+extends RefCounted
 
 var rand_info_inst__tower_id_to_type_inst_info_map : Dictionary
 

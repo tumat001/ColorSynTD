@@ -32,6 +32,10 @@ naming/scene_name_casing=0
 
 enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
 
+[gui]
+
+theme/custom_font="res://MiscRelated/FontRelated/RobotoMono/RobotoMono-VariableFont_wght.ttf"
+
 [layer_names]
 
 2d_physics/layer_1="Tower"

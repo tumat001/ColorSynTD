@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dawm1e1k2d00d"]
+
+[ext_resource type="Script" path="res://MiscRelated/PlayerGUIRelated/PlayerGUI_SimpleButton/PlayerGUI_SimpleButton.gd" id="1_yj6k4"]
+
+[node name="PlayerGUI_SimpleButton" type="Button"]
+self_modulate = Color(1, 1, 1, 0)
+focus_mode = 0
+script = ExtResource("1_yj6k4")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

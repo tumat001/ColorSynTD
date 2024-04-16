@@ -1,9 +1,158 @@
-[gd_scene format=3 uid="uid://6qjv7vvd6qme"]
+[gd_scene load_steps=10 format=3 uid="uid://6qjv7vvd6qme"]
 
-[node name="GUI_ShopPanel" type="Control"]
-layout_mode = 3
+[ext_resource type="Script" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/GUI_ShopPanel.gd" id="1_de06c"]
+[ext_resource type="PackedScene" uid="uid://mv4ywvgl3e3k" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/ShopBuyCardSlot/GUI_ShopBuyCardSlot.tscn" id="1_w2y4h"]
+[ext_resource type="Texture2D" uid="uid://ccf06hr2hp4a3" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/Assets/GUI_ShopPanel_LevelRoll_Frame.png" id="1_y5e5l"]
+[ext_resource type="PackedScene" uid="uid://cqn60jr4t4vvp" path="res://MiscRelated/PlayerGUIRelated/PlayerGUI_TextureButtonWithElements/PlayerGUI_TextureWithHTextAndIconButton.tscn" id="2_1ap7i"]
+[ext_resource type="Texture2D" uid="uid://h4wo4s1c0oc7" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/Assets/GUI_ShopPanel_LevelUpButton.png" id="3_vqhkm"]
+[ext_resource type="Texture2D" uid="uid://crv6grvcdt000" path="res://MiscRelated/CommonArts/CommonArts_LevelUp_Orange_20x20.png" id="4_jublc"]
+[ext_resource type="Texture2D" uid="uid://dtjtun1sf1d0u" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/Assets/GUI_ShopPanel_RollButton.png" id="4_xf7s7"]
+[ext_resource type="Texture2D" uid="uid://clshqfek6yoqm" path="res://MiscRelated/CommonArts/CommonArts_LevelUp_ShopReroll_20x20.png" id="6_l7bme"]
+[ext_resource type="Texture2D" uid="uid://nsw2nbptvnpe" path="res://MiscRelated/CommonArts/CommonArts_Gold_12x12.png" id="6_r8h1f"]
+
+[node name="GUI_ShopPanel" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -438.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_de06c")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="MainHBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LevelRollContainer" type="MarginContainer" parent="MainHBoxContainer"]
+layout_mode = 2
+
+[node name="LevelRollBackground" type="TextureRect" parent="MainHBoxContainer/LevelRollContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("1_y5e5l")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="Control" parent="MainHBoxContainer/LevelRollContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="PlayerGUI_TWTaIB_LevelUp" parent="MainHBoxContainer/LevelRollContainer/VBoxContainer" instance=ExtResource("2_1ap7i")]
+layout_mode = 2
+offset_left = 3.0
+offset_top = -75.0
+offset_right = 118.0
+offset_bottom = -40.0
+
+[node name="PlayerGUI_TextureButton" parent="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_LevelUp" index="0"]
+texture_normal = ExtResource("3_vqhkm")
+
+[node name="Label" parent="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_LevelUp/Container" index="0"]
+offset_left = 26.0
+offset_top = 10.0
+offset_right = 77.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 11
+text = "Lvl up:"
+
+[node name="Icon" parent="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_LevelUp/Container" index="1"]
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 24.0
+offset_bottom = 29.0
+texture = ExtResource("4_jublc")
+
+[node name="LvlUpCurrencyIcon" type="TextureRect" parent="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_LevelUp/Container" index="2"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 13.0
+offset_right = 111.0
+offset_bottom = 25.0
+texture = ExtResource("6_r8h1f")
+stretch_mode = 2
+
+[node name="LvlUpCostLabel" type="Label" parent="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_LevelUp/Container" index="3"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 11.0
+offset_right = 96.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 11
+text = "000"
+horizontal_alignment = 2
+
+[node name="PlayerGUI_TWTaIB_Roll" parent="MainHBoxContainer/LevelRollContainer/VBoxContainer" instance=ExtResource("2_1ap7i")]
+layout_mode = 2
+offset_left = 3.0
+offset_top = -38.0
+offset_right = 90.0
+offset_bottom = -3.0
+
+[node name="PlayerGUI_TextureButton" parent="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_Roll" index="0"]
+texture_normal = ExtResource("4_xf7s7")
+
+[node name="Label" parent="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_Roll/Container" index="0"]
+offset_left = 26.0
+offset_top = 10.0
+offset_right = 84.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 11
+text = "Reroll:"
+
+[node name="Icon" parent="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_Roll/Container" index="1"]
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 24.0
+offset_bottom = 29.0
+texture = ExtResource("6_l7bme")
+
+[node name="GoldIcon" type="TextureRect" parent="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_Roll/Container" index="2"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 13.0
+offset_right = 111.0
+offset_bottom = 25.0
+texture = ExtResource("6_r8h1f")
+stretch_mode = 2
+
+[node name="RerollCostLabel" type="Label" parent="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_Roll/Container" index="3"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 11.0
+offset_right = 96.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 11
+text = "000"
+horizontal_alignment = 2
+
+[node name="BuyCardHBoxContainer" type="HBoxContainer" parent="MainHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="NormalCardHBoxCont" type="HBoxContainer" parent="MainHBoxContainer/BuyCardHBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ShopBuyCardSlot_01" parent="MainHBoxContainer/BuyCardHBoxContainer/NormalCardHBoxCont" instance=ExtResource("1_w2y4h")]
+layout_mode = 2
+
+[node name="ShopBuyCardSlot_02" parent="MainHBoxContainer/BuyCardHBoxContainer/NormalCardHBoxCont" instance=ExtResource("1_w2y4h")]
+layout_mode = 2
+
+[node name="ShopBuyCardSlot_03" parent="MainHBoxContainer/BuyCardHBoxContainer/NormalCardHBoxCont" instance=ExtResource("1_w2y4h")]
+layout_mode = 2
+
+[node name="PaintShopBuyCardSlot_01" parent="MainHBoxContainer/BuyCardHBoxContainer" instance=ExtResource("1_w2y4h")]
+layout_mode = 2
+
+[node name="RelicContainer" type="MarginContainer" parent="MainHBoxContainer"]
+layout_mode = 2
+
+[connection signal="button_left_released" from="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_LevelUp/PlayerGUI_TextureButton" to="." method="_on_level_up_button_left_released"]
+[connection signal="button_left_released" from="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_Roll/PlayerGUI_TextureButton" to="." method="_on_reroll_button_left_released"]
+
+[editable path="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_LevelUp"]
+[editable path="MainHBoxContainer/LevelRollContainer/VBoxContainer/PlayerGUI_TWTaIB_Roll"]

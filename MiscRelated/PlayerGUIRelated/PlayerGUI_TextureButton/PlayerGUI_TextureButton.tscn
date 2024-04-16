@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3c21qb4bvo8c"]
+
+[ext_resource type="Script" path="res://MiscRelated/PlayerGUIRelated/PlayerGUI_TextureButton/PlayerGUI_TextureButton.gd" id="1_jsgv0"]
+
+[node name="PlayerGUI_TextureButton" type="TextureButton"]
+script = ExtResource("1_jsgv0")

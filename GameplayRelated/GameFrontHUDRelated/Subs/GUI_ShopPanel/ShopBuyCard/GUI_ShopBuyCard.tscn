@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbbwomcepqub2"]
+[gd_scene load_steps=10 format=3 uid="uid://cbbwomcepqub2"]
 
 [ext_resource type="Script" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/ShopBuyCard/GUI_ShopBuyCard.gd" id="1_rwmgq"]
 [ext_resource type="Texture2D" uid="uid://bwa6l166jar7g" path="res://GameplayRelated/GameFrontHUDRelated/Subs/_commons/GUI_TierIcon/GUI_TierIcon_LongLarge_Tier03.png" id="2_84mqv"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://tbj23biougsr" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/ShopBuyCard/Assets/GUI_ShopBuyCard_Blue_PaintTower.png" id="4_mxifg"]
 [ext_resource type="Shader" path="res://MiscRelated/Shaders/Shader_HalfDiagonalMask.gdshader" id="5_4i4et"]
 [ext_resource type="Texture2D" uid="uid://di3jsawecrv47" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/ShopBuyCard/Assets/GUI_ShopBuyCard_Red_PaintTower.png" id="6_r6wsv"]
+[ext_resource type="FontFile" uid="uid://b5ex0rd7bgda4" path="res://MiscRelated/FontRelated/RobotoMono/RobotoMono-VariableFont_wght.ttf" id="7_jhau4"]
+[ext_resource type="PackedScene" uid="uid://dawm1e1k2d00d" path="res://MiscRelated/PlayerGUIRelated/PlayerGUI_SimpleButton/PlayerGUI_SimpleButton.tscn" id="7_kowqq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nr7vj"]
 shader = ExtResource("5_4i4et")
@@ -18,35 +20,65 @@ script = ExtResource("1_rwmgq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 0
 
 [node name="TierContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TierContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_filter = 2
 theme_override_constants/separation = 0
 
 [node name="TierBanner" type="TextureRect" parent="VBoxContainer/TierContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_filter = 2
 texture = ExtResource("2_84mqv")
 
 [node name="TierStem" type="TextureRect" parent="VBoxContainer/TierContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_filter = 2
 texture = ExtResource("3_ww7te")
 stretch_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Color01Background" type="TextureRect" parent="VBoxContainer/MarginContainer2"]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("4_mxifg")
 
 [node name="Color02Background" type="TextureRect" parent="VBoxContainer/MarginContainer2"]
 material = SubResource("ShaderMaterial_nr7vj")
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("6_r6wsv")
+
+[node name="FreeFormContainer" type="Control" parent="."]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="FreeFormContainer"]
+layout_mode = 0
+offset_top = 78.0
+offset_right = 120.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0.866667, 0.866667, 0.866667, 1)
+theme_override_fonts/font = ExtResource("7_jhau4")
+theme_override_font_sizes/font_size = 13
+text = "colored canvas"
+horizontal_alignment = 1
+
+[node name="BuyButton" parent="." instance=ExtResource("7_kowqq")]
+layout_mode = 2
+
+[connection signal="button_left_released" from="BuyButton" to="." method="_on_buy_button_button_left_released"]
+[connection signal="button_right_released" from="BuyButton" to="." method="_on_buy_button_button_right_released"]
+[connection signal="mouse_functionally_entered" from="BuyButton" to="." method="_on_buy_button_mouse_functionally_entered"]
+[connection signal="mouse_functionally_exited" from="BuyButton" to="." method="_on_buy_button_mouse_functionally_exited"]

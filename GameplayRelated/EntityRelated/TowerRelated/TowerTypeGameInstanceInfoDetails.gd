@@ -16,6 +16,9 @@ func add_tower_color(arg_tower_color_id):
 		_tower_colors.append(arg_tower_color_id)
 		emit_signal("tower_colors_changed")
 
+func get_tower_colors():
+	return _tower_colors
+
 
 func set_tower_color_capacity(arg_capacity):
 	_tower_color_capacity = arg_capacity

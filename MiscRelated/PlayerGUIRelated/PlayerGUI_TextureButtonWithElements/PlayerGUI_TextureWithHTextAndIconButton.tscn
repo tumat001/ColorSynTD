@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqn60jr4t4vvp"]
+
+[ext_resource type="Script" path="res://MiscRelated/PlayerGUIRelated/PlayerGUI_TextureButtonWithElements/PlayerGUI_TextureWithTextAndIconButton.gd" id="1_jeequ"]
+[ext_resource type="PackedScene" uid="uid://d3c21qb4bvo8c" path="res://MiscRelated/PlayerGUIRelated/PlayerGUI_TextureButton/PlayerGUI_TextureButton.tscn" id="2_msns4"]
+
+[node name="PlayerGUI_TextureWithTextAndIconButton" type="MarginContainer"]
+script = ExtResource("1_jeequ")
+
+[node name="PlayerGUI_TextureButton" parent="." instance=ExtResource("2_msns4")]
+layout_mode = 2
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 2
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="Icon" type="TextureRect" parent="Container"]
+layout_mode = 2
+offset_left = 5.0
+offset_right = 5.0
+offset_bottom = 23.0
+
+[connection signal="mouse_functionally_entered" from="PlayerGUI_TextureButton" to="." method="_on_player_gui_texture_button_mouse_functionally_entered"]
+[connection signal="mouse_functionally_exited" from="PlayerGUI_TextureButton" to="." method="_on_player_gui_texture_button_mouse_functionally_exited"]

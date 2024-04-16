@@ -9,6 +9,7 @@ signal tower_custom_long_description_changed(arg_val)
 
 var tower_id : int
 
+
 var _tower_custom_name : Array
 var _tower_custom_simple_description : Array
 var _tower_custom_middle_description : Array

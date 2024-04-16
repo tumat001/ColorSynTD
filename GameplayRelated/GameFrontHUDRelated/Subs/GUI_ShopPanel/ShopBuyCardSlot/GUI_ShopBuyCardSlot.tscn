@@ -1,22 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://mv4ywvgl3e3k"]
+[gd_scene load_steps=3 format=3 uid="uid://mv4ywvgl3e3k"]
 
 [ext_resource type="Script" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/ShopBuyCardSlot/GUI_ShopBuyCardSlot.gd" id="1_tfick"]
+[ext_resource type="Texture2D" uid="uid://cx2i8fhty8xjp" path="res://GameplayRelated/GameFrontHUDRelated/Subs/GUI_ShopPanel/ShopBuyCardSlot/Assets/GUI_ShopBuyCardSlot_Normal01.png" id="2_n62gu"]
 
-[node name="GUI_ShopBuyCardSlot" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GUI_ShopBuyCardSlot" type="MarginContainer"]
+custom_minimum_size = Vector2(124, 100)
+offset_right = 124.0
+offset_bottom = 100.0
+mouse_filter = 2
 script = ExtResource("1_tfick")
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
 
-[node name="SlotContainer" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 2
+offset_top = 24.0
+offset_right = 124.0
+offset_bottom = 102.0
+mouse_filter = 2
+texture = ExtResource("2_n62gu")
+
+[node name="SlotContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 4
